@@ -9,6 +9,22 @@
 Location here
 \end{abstract}
 
+\usepackage{tikz}
+\usepackage{ifthen}
+
+\newcommand{\xyplane}[2]{
+\draw[->, style=thick] (-#1,0)--(#1+0.3,0);
+\draw[->, style=thick] (0,-#2)--(0,#2+0.3);
+\foreach \x in {-#1,...,#1}{\ifthenelse{\x=0}{}{
+    {\draw (\x ,-0.1)--(\x ,0.1);
+     \draw (\x,0) node[below, font=\footnotesize] {$\x$};
+    }}}
+\foreach \y in {-#2,...,#2}{\ifthenelse{\y=0}{}{
+    {\draw (-0.1,\y)--(0.1,\y);
+     \draw (0,\y) node[left, font=\footnotesize] {$\y$};    
+    }}}
+}
+
 
 
 \begin{document}
@@ -60,15 +76,23 @@ Determine if the limit approaches a finite number, infinity, or does not exist. 
 \end{shuffle}
 
 
-Limit definition of derivative:
+Limit definition of derivative:\\
 \geogebra{tHTMSYDj}{906}{552}
 
 \vspace{0.5in}
 
-Generating Sinusoids
+Generating Sinusoids\\
 \desmos{absl7xylcv}{}{}
 
+\vspace{1in}
 
+Include Tikz Pictures:\\
+
+\begin{tikzpicture}
+\xyplane{5}{5}
+\draw[thick, color=blue, smooth, samples=200, domain=-4:2, <->] plot (\x, {\x*\x+2*\x-3});
+\draw[thick, color=orange, smooth, samples=200, domain=-3:3, <->] plot (\x, \x-1);
+\end{tikzpicture}
 
 
 
