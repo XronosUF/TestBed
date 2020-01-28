@@ -1,7 +1,7 @@
-\listfiles 
 \documentclass{ximera}
 %\usepackage[framemethod=default]{mdframed}% Use mdframed to provide extensive styling for environments in pdf form.
-
+\usepackage{dateiliste}
+\usepackage{expl3}
 
 \definecolor{problemBackgroundColor}{RGB}{255, 230, 179}% A light tan color
 \definecolor{problemBorderColor}{RGB}{77, 77, 77}% Darker Grey color
@@ -206,9 +206,9 @@
     }
 
 
-
+\listfiles
 \begin{document}
-
+\printFileList
 
 
 This is a file to do problem environment styling.

@@ -1,6 +1,33 @@
 \newenvironment {prompt}{}{}
 \newcommand {\DeclareMathOperator }[2]{\@OldDeclareMathOperator {##1}{##2}\immediate \write \myfile {\unexpanded {\DeclareMathOperator }{\unexpanded {##1}}{\unexpanded {##2}}}}
 \newcommand {\ungraded }[0]{}
+\newcommand {\reserved@a }[1]{\xdef \@filelist {\@filelist ,##1}}
+\newcommand {\@addtofilelist }[1]{\expandafter \xdef \csname dateiliste@page@##1\endcsname {\thepage }\xdef \@filelist {\@filelist ,##1}}
+\newcommand {\ProvideFileInfos }[2]{\rcsInfo ##1 \ProvidesFile {\expandafter \@firstofone \rcsInfoFile }[\rcsInfoDate \space v\rcsInfoRevision \space ##2]}
+\newcommand {\dateiliste@escapeii }[1]{\dateiliste@escape@@ii ##1\@nil . \@@nil \@@ }
+\newcommand {\dateiliste@escapetoken }[1]{\ifx ##1\@empty \@empty \else \ifcat \noexpand \relax \noexpand ##1\string \string \string ##1\else \ifcase \catcode \expandafter `##1 \string \textbackslash \space \or \string \{\or \string \}\or \string \$\or \string \&\or (Kategorie 5)\or \string \#\or \string \^{ }\or \string \_\or (Kategorie 9 - ignored)\or ##1\or ##1\or ##1\or \string \string \string ##1\or \%\or (Kategorie 15 - invalid)\else (andere Kategorie)\fi \fi \fi }
+\newcommand {\@@nil }[0]{\@@nil }
+\newcommand {\@nil }[0]{\@nil }
+\newcommand {\@@ }[0]{\@@ }
+\newcommand {\fileListPreamble }[0]{ Here is the list of all files used during the run of \LaTeX {} which produced this document. \footnote {More precisely, it is the list of files used one \LaTeX -run before the one which produced this document, but after some runs the list should stabilize.} }
+\newcommand {\fileListName }[0]{List of Files}
+\newcommand {\fileNameName }[0]{file name}
+\newcommand {\pageName }[0]{page}
+\newcommand {\dateName }[0]{release date}
+\newcommand {\verName }[0]{version}
+\newcommand {\descriptionName }[0]{description}
+\newcommand {\dateiliste@babel }[0]{ \addto {\extrasenglish }{\renewcommand *\fileListPreamble {Here is the list of all files used during the run of \LaTeX {} which produced this document.\footnote {More precisely, it is the list of files used one \LaTeX -run before the one which produced this document, but after some runs the list should stabilize.}}\renewcommand *\fileListName {List of Files}\renewcommand *\fileNameName {file name}\renewcommand *\pageName {page}\renewcommand *\dateName {release date}\renewcommand *\verName {ver.}\renewcommand *\descriptionName {description}}\addto {\extrasgerman }{\renewcommand *\fileListPreamble {Hier die Liste aller Dateien, die w\"ahrend des \LaTeX -Laufes, welcher dieses Dokument erzeugte, verwendet wurden. \footnote {genauer: Es ist die Liste aller Dokumente, die einen \LaTeX -Lauf fr\"uher verwendet wurden. Aber nach einigen L\"aufen sollte sich die Liste stabilisieren.}}\renewcommand *\fileListName {Liste der Dateinamen}\renewcommand *\fileNameName {Dateiname}\renewcommand *\pageName {\llap {Se}ite}\renewcommand *\dateName {Datum}\renewcommand *\verName {Ver.}\renewcommand *\descriptionName {Beschreibung}}\addto {\extrasngerman }{\renewcommand *\fileListPreamble {Hier die Liste aller Dateien, die w\"ahrend des \LaTeX -Laufes, welcher dieses Dokument erzeugte, verwendet wurden. \footnote {genauer: Es ist die Liste aller Dokumente, die einen \LaTeX -Lauf fr\"uher verwendet wurden. Aber nach einigen L\"aufen sollte sich die Liste stabilisieren.}}\renewcommand *\fileListName {Liste der Dateinamen}\renewcommand *\fileNameName {Dateiname}\renewcommand *\pageName {Seite}\renewcommand *\dateName {Datum}\renewcommand *\verName {Ver.}\renewcommand *\descriptionName {Beschreibung}}\addto {\extrasesperanto }{\renewcommand *\fileListPreamble {Jen listo de \^ciuj dosieroj, kiuj estis uzitaj dum la \LaTeX -rulo, kiu produktis tiun \^ci dokumenton. \footnote {Pli precize: estas la listo de dosieroj uzitaj unu rulon anta\u {u} tiu, kiu produktis tiun \^ci dokumenton. Sed kutime post kelkaj ruloj la listo devus stabili\^gi.}}\renewcommand *\fileListName {Listo de dosieroj}\renewcommand *\fileNameName {dosiernomo}\renewcommand *\pageName {pa\^go}\renewcommand *\dateName {dato}\renewcommand *\verName {versio}\renewcommand *\descriptionName {priskribo}}\let \dateiliste@babel = \relax }
+\newcommand {\mainFileToList }[0]{\@ifundefined {@filelist}{\PackageWarning {dateiliste}{
+ \protect \mainFileToList \space (i.e. using the {dateiliste} package withouth
+ the [noaddmain] option) works only if \protect \listfiles \space is given
+ in the preamble.
+ }}{\IfFileExists {\jobname .tex} {\begingroup \newcommand *{\dateiliste@catxii@transform }{ \edef \dateiliste@mainfile {\jobname .tex}\edef \dateiliste@mainfile {\expandafter \strip@prefix \meaning \dateiliste@mainfile }\edef \@filelist {\expandafter \strip@prefix \meaning \@filelist }}\newcommand *{\dateiliste@scantoken@tr }{\scantokens \expandafter {\expandafter \makeatletter \expandafter \edef \expandafter \dateiliste@mainfile \expandafter {\jobname .tex}\makeatother }}\if@dateiliste@catxii \dateiliste@catxii@transform \else \@ifundefined {scantokens}{\if@dateiliste@nocatxii \edef \dateiliste@mainfile {\jobname .tex}\else \dateiliste@catxii@transform \fi }{\dateiliste@scantoken@tr }\fi \@expandtwoargs \@removeelement {\dateiliste@mainfile }\@filelist \@filelist \xdef \@filelist {\dateiliste@mainfile ,\@filelist }\endgroup }{\relax }}}
+\newcommand {\expl@create@bool@option }[2]{\DeclareOption {##1}{\chardef ##2=1 }\DeclareOption {##1=true}{\chardef ##2=1 }\DeclareOption {##1=false}{\chardef ##2=0 }\newcommand *##2{}\chardef ##2=0 }
+\newcommand {\l@expl@undo@recent@deprecations@bool }[0]{}
+\newcommand {\l@expl@check@declarations@bool }[0]{}
+\newcommand {\l@expl@log@functions@bool }[0]{}
+\newcommand {\l@expl@enable@debug@bool }[0]{}
+\newcommand {\l@expl@options@clist }[0]{}
 \newcommand {\setBorderColor }[4]{\definecolor {##1BorderColor}{RGB}{##2, ##3, ##4} }
 \newcommand {\setBackgroundColor }[4]{\definecolor {##1BackgroundColor}{RGB}{##2, ##3, ##4} }
 \newcommand {\reserved@a }[2]{}
@@ -12,6 +39,11 @@
 \newcommand {\pageref  }[0]{\@ifstar \@pagerefstar \T@pageref }
 \newcommand {\nameref  }[0]{\@ifstar \@namerefstar \T@nameref }
 \newcommand {\ST@wsf }[1]{\immediate \write \ST@sf {##1}}
+\newcommand {\dateiliste@preInclude }[0]{\relax }
+\newcommand {\dateiliste@postInclude }[0]{\relax }
+\newcommand {\@writefilelist }[0]{\newwrite \dateiliste@file \immediate \openout \dateiliste@file = \jobname .filelist \edef \dateiliste@today {\the \year /\two@digits {\the \month }/\two@digits {\the \day }}\immediate \write \dateiliste@file {\string \ProvidesFile {\jobname .filelist}[\dateiliste@today \space --- automatically generated filelist]}\if@dateiliste@showpages \def \@tempa {lrll} \else \def \@tempa {lll} \fi \immediate \write \dateiliste@file {\string \LTleft =0pt\string \LTright =0pt\string \begin {longtable}{\@tempa >{\string \raggedright \string \arraybackslash }X}\string \textbf {\fileNameName } \expandafter &\if@dateiliste@showpages \string \textbf {\pageName } & \fi \string \textbf {\dateName } & \string \textbf {\verName } & \string \textbf {\descriptionName } \string \endhead }\@for \@currname :=\@filelist \do {\filename@parse \@currname \edef \dateiliste@filename {\filename@base .\ifx \filename@ext \relax tex\else \filename@ext \fi }\expandafter \let \expandafter \dateiliste@fileversion \csname ver@\dateiliste@filename \endcsname \if@dateiliste@showpages \@ifundefined {dateiliste@page@\@currname } {\def \dateiliste@filepage {0}}{\expandafter \let \expandafter \dateiliste@filepage \csname dateiliste@page@\@currname \endcsname }\fi \edef \dateiliste@zeile {\expandafter \dateiliste@escapeii \expandafter {\dateiliste@filename } \space & \if@dateiliste@showpages \dateiliste@filepage \space & \fi \ifx \dateiliste@fileversion \relax --- \else \expandafter \dateiliste@parse@ver \dateiliste@fileversion {} {} {} \dateiliste@parse@ver \fi \string \\}\immediate \write \dateiliste@file {\dateiliste@zeile }}\immediate \write \dateiliste@file {\string \end {longtable}} \immediate \closeout \dateiliste@file }
+\newcommand {\dateiliste@catxii@transform }[0]{ \edef \dateiliste@mainfile {\jobname .tex}\edef \dateiliste@mainfile {\expandafter \strip@prefix \meaning \dateiliste@mainfile }\edef \@filelist {\expandafter \strip@prefix \meaning \@filelist }}
+\newcommand {\dateiliste@scantoken@tr }[0]{\scantokens \expandafter {\expandafter \makeatletter \expandafter \edef \expandafter \dateiliste@mainfile \expandafter {\jobname .tex}\makeatother }}
 \newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[0]{\AtBeginDocument }
 \newcommand {\reserved@a }[1]{}
