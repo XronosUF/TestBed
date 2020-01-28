@@ -1,6 +1,77 @@
 \newenvironment {prompt}{}{}
 \newcommand {\DeclareMathOperator }[2]{\@OldDeclareMathOperator {##1}{##2}\immediate \write \myfile {\unexpanded {\DeclareMathOperator }{\unexpanded {##1}}{\unexpanded {##2}}}}
 \newcommand {\ungraded }[0]{}
+\newcommand {\mdf@PackageError }[1]{\PackageError {\mdframedpackagename }{##1}}
+\newcommand {\mdf@PackageWarning }[1]{\PackageWarning {\mdframedpackagename }{##1}}
+\newcommand {\mdf@PackageInfo }[1]{\PackageInfo {\mdframedpackagename }{##1}}
+\newcommand {\mdf@LoadFile@IfExist }[1]{\IfFileExists {##1.sty}{\RequirePackage {##1}}{\mdf@PackageWarning {The file ##1 does not exist\MessageBreak but needed by \mdframedpackagename \MessageBreak see documentation fo further information }}}
+\newcommand {\expl@create@bool@option }[2]{\DeclareOption {##1}{\chardef ##2=1 }\DeclareOption {##1=true}{\chardef ##2=1 }\DeclareOption {##1=false}{\chardef ##2=0 }\newcommand *##2{}\chardef ##2=0 }
+\newcommand {\l@expl@undo@recent@deprecations@bool }[0]{}
+\newcommand {\l@expl@check@declarations@bool }[0]{}
+\newcommand {\l@expl@log@functions@bool }[0]{}
+\newcommand {\l@expl@enable@debug@bool }[0]{}
+\newcommand {\l@expl@options@clist }[0]{}
+\newcommand {\needspace }[1]{\begingroup \setlength {\dimen@ }{##1}\vskip \z@ \@plus \dimen@ \penalty -100\vskip \z@ \@plus -\dimen@ \vskip \dimen@ \penalty 9999\vskip -\dimen@ \vskip \z@skip \endgroup }
+\newcommand {\Needspace }[0]{\@ifstar {\@sneedsp@ }{\@needsp@ }}
+\newcommand {\@sneedsp@ }[1]{\par \penalty -100\begingroup \setlength {\dimen@ }{##1}\dimen@ii \pagegoal \advance \dimen@ii -\pagetotal \ifdim \dimen@ >\dimen@ii \break \fi \endgroup }
+\newcommand {\@needsp@ }[1]{\par \penalty -100\begingroup \setlength {\dimen@ }{##1}\dimen@ii \pagegoal \advance \dimen@ii -\pagetotal \ifdim \dimen@ >\dimen@ii \ifdim \dimen@ii >\z@ \vfil \fi \break \fi \endgroup }
+\newcommand {\mdf@option@length }[2]{\expandafter \newlength \csname mdf@##1@length\endcsname \expandafter \setlength \csname mdf@##1@length\endcsname {##2}}
+\newcommand {\mdf@define@key@length }[1]{\define@key {mdf}{##1}{\def \@tempa {####1} \mdf@iflength {\@tempa }{\csxdef {mdfl@##1}{\the \mdf@templength }}{\csxdef {mdfl@##1}{\the \mdf@templength }}\setlength {\csname mdf@##1@length\endcsname }{\csname mdfl@##1\endcsname }}}
+\newcommand {\mdf@framemethod }[0]{}
+\newcommand {\mdf@align }[0]{}
+\newcommand {\mdf@makeboxalign@left }[0]{\null \hspace *{\mdf@leftmargin@length }}
+\newcommand {\mdf@makeboxalign@right }[0]{}
+\newcommand {\mdfsetup }[0]{\kvsetkeys {mdf}}
+\newcommand {\mdf@ifstrequal@expand }[0]{\expandafter \ifstrequal \expandafter {\mdf@printheight }}
+\newcommand {\mdf@print@space }[0]{\mdf@ifstrequal@expand {none}{\def \mdf@tempa {NoInfo}}{\mdf@ifstrequal@expand {info}{\def \mdf@tempa {Info}}{\mdf@ifstrequal@expand {warning}{\def \mdf@tempa {Warning}}{\mdf@PackageWarning {Unknown key for printheight=\mdf@printheight 
+ use none, info or warning}\def \mdf@tempa {none}}}}\def \mdf@PackageInfoSpace {\csname mdf@Package\mdf@tempa \endcsname }}
+\newcommand {\mdfcreateextratikz }[0]{}
+\newcommand {\mdf@ignorevbadness }[0]{\edef \mdf@currentvbadness {\the \vbadness }\vbadness =\@M \afterassignment \mdf@restorevbadness }
+\newcommand {\mdf@restorevbadness }[0]{\vbadness =\mdf@currentvbadness \relax }
+\newcommand {\mdfdefinestyle }[2]{\csdef {mdf@definestyle@##1}{##2}}
+\newcommand {\mdfapptodefinestyle }[2]{\ifcsundef {mdf@definestyle@##1}{\mdf@PackageWarning {Unknown style ##1}}{\csappto {mdf@definestyle@##1}{,##2}}}
+\newcommand {\mdflength }[1]{\csuse {mdf@##1@length}}
+\newcommand {\mdf@thm@caption }[2]{}
+\newcommand {\mdf@checkntheorem }[0]{\ifbool {mdf@ntheorem}{\ifundef {\theorempreskipamount }{\mdf@PackageWarning {You have not loaded ntheorem yet}}{\setlength {\theorempreskipamount }{\z@ }\setlength {\theorempostskipamount }{\z@ }}}{}}
+\newcommand {\mdfframedtitleenv }[1]{\mdf@lrbox {\mdf@frametitlebox }\begingroup \@afterheading \mdf@frametitlealignment \leavevmode \color {\mdf@frametitlefontcolor }\normalfont \mdf@frametitlefont {##1}\mdf@@ignorelastdescenders \par \unskip \ifvmode \nointerlineskip \hrule \@height \z@ \@width \hsize \fi \endgroup \endmdf@lrbox \relax \mdf@ignorevbadness \setbox \mdf@frametitlebox =\vbox {\unvbox \mdf@frametitlebox }\mdfframetitleboxwidth =\wd \mdf@frametitlebox \relax \mdfframetitleboxheight =\ht \mdf@frametitlebox \relax \mdfframetitleboxdepth =\dp \mdf@frametitlebox \relax \mdfframetitleboxtotalheight =\dimexpr \ht \mdf@frametitlebox +\dp \mdf@frametitlebox +\mdf@frametitleaboveskip@length +\mdf@frametitlebelowskip@length \relax \setbox \mdf@frametitlebox =\vbox to \dimexpr \mdfframetitleboxheight +\mdfframetitleboxdepth \relax {\unvbox \mdf@frametitlebox }}
+\newcommand {\mdf@@frametitle@use }[0]{\mdf@ignorevbadness \setbox \mdf@splitbox@one =\vbox {\parskip \z@ \relax \parindent \z@ \relax \offinterlineskip \relax \unvcopy \mdf@frametitlebox \relax \mdf@@frametitlerule \relax \unvbox \mdf@splitbox@one \relax }\mdf@ignorevbadness \setbox \mdf@splitbox@one =\vbox {\unvbox \mdf@splitbox@one }\mdfsetup {innertopmargin=\mdf@frametitleaboveskip@length }}
+\newcommand {\mdf@footnoterule }[0]{\kern 0\p@ \hrule \@width 1in \kern 2.6\p@ }
+\newcommand {\mdf@footnoteoutput }[0]{\ifvoid \@mpfootins \else \nobreak \vskip \mdf@footenotedistance@length \normalcolor \mdf@footnoterule \unvbox \@mpfootins \fi }
+\newcommand {\mdf@footnoteinput }[0]{\def \@mpfn {mpfootnote}\def \thempfn {\thempfootnote }\c@mpfootnote \z@ \let \@footnotetext \@mpfootnotetext }
+\newcommand {\mdf@styledefinition }[0]{\ifnumequal {\value {mdf@globalstyle@cnt}}{0}{\deflength {\mdf@innerlinewidth@length }{\z@ }\deflength {\mdf@middlelinewidth@length }{\mdf@linewidth@length }\deflength {\mdf@outerlinewidth@length }{\z@ }\let \mdf@innerlinecolor \mdf@linecolor \let \mdf@middlelinecolor \mdf@linecolor \let \mdf@outerlinecolor \mdf@linecolor }{}}
+\newcommand {\detected@mdf@put@frame }[0]{\ifmdf@nobreak \def \mdf@reserved@a {\mdf@put@frame@standalone }\else \def \mdf@reserved@a {\mdf@put@frame }\ifx \@captype \@undefined \def \mdf@reserved@a {\mdf@put@frame }\else \mdf@PackageInfo {mdframed inside float 
+ mdframed uses option nobreak \mdframedpackagename }\def \mdf@reserved@a {\mdf@put@frame@standalone }\fi \if@minipage \mdf@PackageInfo {mdframed inside minipage 
+ mdframed uses option nobreak \mdframedpackagename }\def \mdf@reserved@a {\mdf@put@frame@standalone }\fi \ifinner \mdf@PackageInfo {mdframed inside a box 
+ mdframed uses option nobreak \mdframedpackagename }\def \mdf@reserved@a {\mdf@put@frame@standalone }\fi \fi \mdf@reserved@a }
+\newcommand {\mdf@preenvsetting }[0]{\needspace {\mdf@needspace@length } \mdf@twoside@checklength \edef \mdf@par@local {\parskip =\the \parskip \relax \parindent =\the \parindent \relax }\parskip \z@ \parindent \z@ \let \width \z@ \let \height \z@ \mdf@checkntheorem \ifbool {mdf@draft}{\ifdimgreater {\overfullrule }{0pt}{}{\setlength \overfullrule {5pt}}}{}\ifnum \mdf@envdepth >\tw@ \@toodeep \else \advance \mdf@envdepth \@ne \edef \mdf@depthctr {mdf@env@\romannumeral \the \mdf@envdepth }\fi \mdf@styledefinition \mdf@footnoteinput \color {\mdf@fontcolor }\mdf@font }
+\newcommand {\mdf@@ignorelastdescenders }[0]{\ifbool {mdf@ignorelastdescenders}{\par \strut \par \unskip \unskip \setbox 0=\lastbox \vspace *{\dimexpr \ht \strutbox -\baselineskip \relax }}{}}
+\newcommand {\mdf@twoside@checklength }[0]{\if@twoside \ifbool {mdf@usetwoside}{\mdf@PackageInfo {mdframed works in twoside mode}\settoggle {md:checktwoside}{true}\setlength \mdf@rightmargin@length {\mdf@outermargin@length }\setlength \mdf@leftmargin@length {\mdf@innermargin@length }}{\mdf@PackageInfo {mdframed inside twoside mode but\MessageBreak works with oneside mode}\settoggle {md:checktwoside}{false}}\fi }
+\newcommand {\mdf@zref@label }[0]{\stepcounter {mdf@zref@counter}\zref@label {mdf@pagelabel-\number \value {mdf@zref@counter}}}
+\newcommand {\if@mdf@pageodd }[0]{\zref@refused {mdf@pagelabel-\the \value {mdf@zref@counter}}\ifodd \zref@extract {mdf@pagelabel-\the \value {mdf@zref@counter}}{mdf@pagevalue}\setlength \mdf@rightmargin@length {\mdf@outermargin@length }\setlength \mdf@leftmargin@length {\mdf@innermargin@length }\else \setlength \mdf@rightmargin@length {\mdf@innermargin@length }\setlength \mdf@leftmargin@length {\mdf@outermargin@length }\fi }
+\newcommand {\mdf@@setzref }[0]{\iftoggle {md:checktwoside}{\mdf@zref@label \if@mdf@pageodd }{}}
+\newcommand {\mdf@freepagevspace }[0]{\bgroup \@nobreakfalse \addpenalty \z@ \egroup \penalty \@M \relax \vskip 2\baselineskip \relax \penalty 9999\relax \vskip -2\baselineskip \relax \penalty 9999\ifdimequal {\pagegoal }{\maxdimen }{\mdf@freevspace@length \vsize }{\mdf@freevspace@length =\pagegoal \relax \advance \mdf@freevspace@length by -\pagetotal \relax \addtolength \mdf@freevspace@length {\dimexpr -\parskip \relax }\relax }}
+\newcommand {\mdf@advancelength@sub }[2]{\advance ##1 by -\csname mdf@##2@length\endcsname \relax }
+\newcommand {\mdf@advancelength@add }[2]{\advance ##1 by \csname mdf@##2@length\endcsname \relax }
+\newcommand {\mdf@horizontalmargin@equation }[0]{\setlength {\mdf@horizontalspaceofbox }{\mdf@userdefinedwidth@length }\mdf@dolist {\mdf@advancelength@sub {\mdf@horizontalspaceofbox }}{leftmargin,outerlinewidth,middlelinewidth,innerlinewidth,innerleftmargin,innerrightmargin,innerlinewidth,middlelinewidth,outerlinewidth,rightmargin}\notbool {mdf@leftline}{\mdf@dolist {\mdf@advancelength@add {\mdf@horizontalspaceofbox }}{innerlinewidth,middlelinewidth,outerlinewidth}}{}\notbool {mdf@rightline}{\mdf@dolist {\mdf@advancelength@add {\mdf@horizontalspaceofbox }}{innerlinewidth,middlelinewidth,outerlinewidth}}{}\hsize =\mdf@horizontalspaceofbox }
+\newcommand {\mdf@keeplines@single }[0]{\notbool {mdf@topline}{\mdf@dolist {\mdf@advancelength@sub {\mdf@verticalmarginwhole@length }}{innerlinewidth,middlelinewidth,outerlinewidth}}{}\notbool {mdf@bottomline}{\mdf@dolist {\mdf@advancelength@sub {\mdf@verticalmarginwhole@length }}{innerlinewidth,middlelinewidth,outerlinewidth}}{}}
+\newcommand {\mdf@put@frame@standalone }[0]{\relax \ifvoid \mdf@splitbox@one \relax \mdf@PackageWarning {The environment is empty\MessageBreak }\else \setlength {\mdf@verticalmarginwhole@length }{\dimexpr \ht \mdf@splitbox@one +\dp \mdf@splitbox@one \relax }\mdf@dolist {\mdf@advancelength@add {\mdf@verticalmarginwhole@length }}{outerlinewidth,middlelinewidth,innerlinewidth,innertopmargin,innerbottommargin,innerlinewidth,middlelinewidth,outerlinewidth,extratopheight}\mdf@keeplines@single \begingroup \mdf@@setzref \booltrue {mdfsingleframe}\mdf@beforesingleframe \mdf@putbox@single \mdf@aftersingleframe \endgroup \fi }
+\newcommand {\mdf@test@ltrb }[0]{\ifboolexpr { (bool {mdf@topline}) and (bool {mdf@bottomline}) and (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@ltr }[0]{\ifboolexpr { (bool {mdf@topline}) and not (bool {mdf@bottomline}) and (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@ltb }[0]{\ifboolexpr { (bool {mdf@topline}) and (bool {mdf@bottomline}) and (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@trb }[0]{\ifboolexpr { (bool {mdf@topline}) and (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@lrb }[0]{\ifboolexpr { not (bool {mdf@topline}) and (bool {mdf@bottomline}) and (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@lb }[0]{\ifboolexpr { not (bool {mdf@topline}) and (bool {mdf@bottomline}) and (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@rb }[0]{\ifboolexpr { not (bool {mdf@topline}) and (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@tr }[0]{\ifboolexpr { (bool {mdf@topline}) and not (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@lt }[0]{\ifboolexpr { (bool {mdf@topline}) and not (bool {mdf@bottomline}) and (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@lr }[0]{\ifboolexpr { not (bool {mdf@topline}) and not (bool {mdf@bottomline}) and (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@tb }[0]{\ifboolexpr { (bool {mdf@topline}) and (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@l }[0]{\ifboolexpr { not (bool {mdf@topline}) and not (bool {mdf@bottomline}) and (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@r }[0]{\ifboolexpr { not (bool {mdf@topline}) and not (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and (bool {mdf@rightline})}}
+\newcommand {\mdf@test@t }[0]{\ifboolexpr { (bool {mdf@topline}) and not (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@b }[0]{\ifboolexpr { not (bool {mdf@topline}) and (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@noline }[0]{\ifboolexpr { not (bool {mdf@topline}) and not (bool {mdf@bottomline}) and not (bool {mdf@leftline}) and not (bool {mdf@rightline})}}
+\newcommand {\mdf@test@single }[0]{\ifboolexpr { not (test {\mdf@test@ltrb } or test {\mdf@test@ltr } or test {\mdf@test@ltb } or test {\mdf@test@trb } or test {\mdf@test@lrb } or test {\mdf@test@lb } or test {\mdf@test@rb } or test {\mdf@test@tr } or test {\mdf@test@lt } ) }}
 \newcommand {\setBorderColor }[4]{\definecolor {##1BorderColor}{RGB}{##2, ##3, ##4} }
 \newcommand {\setBackgroundColor }[4]{\definecolor {##1BackgroundColor}{RGB}{##2, ##3, ##4} }
 \newcommand {\reserved@a }[2]{}
@@ -8,14 +79,14 @@
 \newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
 \newcommand {\reserved@a }[1]{}
 \newcommand {\reserved@a }[2]{}
-\newcommand {\mdf@patchamsthm }[0]{\let \mdf@deferred@thm@head \deferred@thm@head \pretocmd {\deferred@thm@head }{\@inlabelfalse }{\mdf@PackageInfo {mdframed detected package amsthm 
- changed the theorem header of amsthm\MessageBreak }}{\mdf@PackageError {mdframed detected package amsthm 
- changed the theorem header of amsthm failed\MessageBreak }}}
 \newcommand {\vnameref  }[1]{\unskip ~\nameref {##1}\@vpageref [\unskip ]{##1}}
 \newcommand {\ref  }[0]{\@ifstar \@refstar \T@ref }
 \newcommand {\pageref  }[0]{\@ifstar \@pagerefstar \T@pageref }
 \newcommand {\nameref  }[0]{\@ifstar \@namerefstar \T@nameref }
 \newcommand {\ST@wsf }[1]{\immediate \write \ST@sf {##1}}
+\newcommand {\mdf@patchamsthm }[0]{\let \mdf@deferred@thm@head \deferred@thm@head \pretocmd {\deferred@thm@head }{\@inlabelfalse }{\mdf@PackageInfo {mdframed detected package amsthm 
+ changed the theorem header of amsthm\MessageBreak }}{\mdf@PackageError {mdframed detected package amsthm 
+ changed the theorem header of amsthm failed\MessageBreak }}}
 \newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[0]{\AtBeginDocument }
