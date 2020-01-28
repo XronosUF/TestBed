@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.15)  28 JAN 2020 13:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.15)  28 JAN 2020 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **problemStyling.tex
 (./problemStyling.tex
 LaTeX2e <2018-12-01>
-(/home/jason/texmf/tex/latex/XimeraXloud/ximeraLatex/ximeraXloud.cls
-Document Class: ximeraXloud 2020/01/15 v2.00 Simultaneously write print and onl
-ine interactive materials
+(./ximera.cls
+Document Class: ximera 2020/01/15 v2.00 Simultaneously write print and online i
+nteractive materials
 
 '::.   .::' ::  :::::     :::::  .:::::::::::::::::::.    ::: 
   '::.::'   :: ::: :::   ::: ::: ::                :::   ::':: 
@@ -1255,20 +1255,20 @@ No file problemStyling.sagetex.sout.
 ) (./problemStyling.aux)
 \openout1 = `problemStyling.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1290,13 +1290,13 @@ LaTeX Font Info:    ... okay on input line 21.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 21.
+ on input line 207.
 
 \c@lstlisting=\count374
-Package hyperref Info: Link coloring ON on input line 21.
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+Package hyperref Info: Link coloring ON on input line 207.
+LaTeX Info: Redefining \ref on input line 207.
+LaTeX Info: Redefining \pageref on input line 207.
+LaTeX Info: Redefining \nameref on input line 207.
 (./problemStyling.out) (./problemStyling.out)
 \@outlinefile=\write8
 \openout8 = `problemStyling.out'.
@@ -1310,15 +1310,15 @@ LaTeX Info: Redefining \nameref on input line 21.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-82.81725pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-15.87262pt
 * \headheight=14.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -1341,214 +1341,214 @@ LaTeX Info: Redefining \nameref on input line 21.
 
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 28.
+(mdframed)              option `nobreak' on input line 214.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 28.
+(mdframed)              on input line 214.
 \c@depthICount=\count375
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 216.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 216.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 31.
+(mdframed)              option `nobreak' on input line 217.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 31.
+(mdframed)              on input line 217.
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sl' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 32.
+(Font)              using `OT1/cmss/bx/n' instead on input line 218.
 
 \c@depthIICount=\count376
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 34.
+(mdframed)              option `nobreak' on input line 220.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 34.
+(mdframed)              on input line 220.
 \c@depthIIICount=\count377
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 38.
+(mdframed)              option `nobreak' on input line 224.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 38.
+(mdframed)              on input line 224.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sl' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 39.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 225.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 39.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 225.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 40.
+ mdframed uses option nobreak mdframed on input line 226.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 41.
+ mdframed uses option nobreak mdframed on input line 227.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 42.
+ mdframed uses option nobreak mdframed on input line 228.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 43.
+(mdframed)              option `nobreak' on input line 229.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 43.
+(mdframed)              on input line 229.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 45.
+(mdframed)              option `nobreak' on input line 231.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 45.
+(mdframed)              on input line 231.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 48.
+ mdframed uses option nobreak mdframed on input line 234.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 49.
+ mdframed uses option nobreak mdframed on input line 235.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 50.
+(mdframed)              option `nobreak' on input line 236.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 50.
+(mdframed)              on input line 236.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 53.
+(mdframed)              option `nobreak' on input line 239.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 53.
+(mdframed)              on input line 239.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 56.
+ mdframed uses option nobreak mdframed on input line 242.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 57.
+ mdframed uses option nobreak mdframed on input line 243.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 58.
+(mdframed)              option `nobreak' on input line 244.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 58.
+(mdframed)              on input line 244.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 61.
+(mdframed)              option `nobreak' on input line 247.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 61.
+(mdframed)              on input line 247.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 63.
+ mdframed uses option nobreak mdframed on input line 249.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 64.
+(mdframed)              option `nobreak' on input line 250.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 64.
+(mdframed)              on input line 250.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 66.
+ mdframed uses option nobreak mdframed on input line 252.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 67.
+ mdframed uses option nobreak mdframed on input line 253.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 68.
+(mdframed)              option `nobreak' on input line 254.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 68.
+(mdframed)              on input line 254.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 71.
+ mdframed uses option nobreak mdframed on input line 257.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 72.
+(mdframed)              option `nobreak' on input line 258.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 72.
+(mdframed)              on input line 258.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 74.
+ mdframed uses option nobreak mdframed on input line 260.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 75.
+(mdframed)              option `nobreak' on input line 261.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 75.
+(mdframed)              on input line 261.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 78.
+ mdframed uses option nobreak mdframed on input line 264.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 79.
+(mdframed)              option `nobreak' on input line 265.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 79.
+(mdframed)              on input line 265.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 82.
+ mdframed uses option nobreak mdframed on input line 268.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 83.
+(mdframed)              option `nobreak' on input line 269.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 83.
+(mdframed)              on input line 269.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 86.
+ mdframed uses option nobreak mdframed on input line 272.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 87.
+(mdframed)              option `nobreak' on input line 273.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 87.
+(mdframed)              on input line 273.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 90.
+ mdframed uses option nobreak mdframed on input line 276.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 91.
+(mdframed)              option `nobreak' on input line 277.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 91.
+(mdframed)              on input line 277.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 94.
+ mdframed uses option nobreak mdframed on input line 280.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 95.
+(mdframed)              option `nobreak' on input line 281.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 95.
+(mdframed)              on input line 281.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 98.
+ mdframed uses option nobreak mdframed on input line 284.
 
 Class mdframed Warning: Value `everyline' is not supported by
-(mdframed)              option `nobreak' on input line 99.
+(mdframed)              option `nobreak' on input line 285.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 99.
+(mdframed)              on input line 285.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 102.
+ mdframed uses option nobreak mdframed on input line 288.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 *********************************************************************
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
  (./problemStyling.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
 Package rerunfilecheck Info: File `problemStyling.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1557,13 +1557,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41766 strings out of 492609
- 929288 string characters out of 6131461
- 1163898 words of memory out of 5000000
- 45078 multiletter control sequences out of 15000+600000
+ 41757 strings out of 492609
+ 929010 string characters out of 6131461
+ 1163891 words of memory out of 5000000
+ 45070 multiletter control sequences out of 15000+600000
  536608 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,13n,98p,851b,1773s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 78i,13n,98p,924b,1773s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/tex
@@ -1572,7 +1572,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam10.pfb>
-Output written on problemStyling.pdf (2 pages, 88696 bytes).
+Output written on problemStyling.pdf (2 pages, 88720 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
