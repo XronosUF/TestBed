@@ -1,0 +1,109 @@
+\documentclass{ximeraXloud}
+\geometry{margin=1cm}
+\providecommand{\setBorderColor}[4]{% Command to change border line color on environments.
+%                               SYNTAX:
+%                                    #1 is the environment name that you want to change the color of.
+%                                    #2 Red value (1-255) that you want for the new color.
+%                                    #3 Green value (1-255) that you want for the new color.
+%                                    #4 Blue value (1-255) that you want for the new color.
+    \definecolor{#1BorderColor}{RGB}{#2, #3, #4}
+    }
+
+\providecommand{\setBackgroundColor}[4]{% Command to change border line color on environments.
+%                               SYNTAX:
+%                                    #1 is the environment name that you want to change the color of.
+%                                    #2 Red value (1-255) that you want for the new color.
+%                                    #3 Green value (1-255) that you want for the new color.
+%                                    #4 Blue value (1-255) that you want for the new color.
+    \definecolor{#1BackgroundColor}{RGB}{#2, #3, #4}
+    }
+
+\begin{document}
+
+
+This is a file to do problem environment styling.
+
+\setBackgroundColor{selectAll}{255}{255}{255}
+\setBorderColor{hint}{255}{255}{255}
+\begin{problem}
+    This is a sample problem.\\
+    $2 \cdot 3 = \answer{6}$
+    \begin{problem}
+        This is a sub-problem.
+        $3 \times 4 = \answer{12}$
+        \begin{problem}
+            This is a sub-sub problem!
+            
+            $1 \times 2 \times 5 = \answer{10}$
+                \begin{feedback}
+                    This is some provided feedback.
+                \end{feedback}
+        \end{problem}            
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        \begin{multipleChoice}
+            \choice[correct]{$3 \times 4 = \answer{12}$}
+            \choice{$15 + 1 = \answer{16}$.}
+        \end{multipleChoice}
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+        \begin{selectAll}
+            \choice[correct]{$3 \times 4 = \answer{12}$}
+            \choice{$15 + 1 = \answer{16}$.}
+        \end{selectAll}
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+        \begin{hint}
+            This is a helpful hint!
+        \end{hint}
+        \begin{freeResponse}
+            Some stuff here?
+        \end{freeResponse}
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{solution}
+        Here is a solution!
+    \end{solution}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+    \begin{problem}
+        This is a subproblem.
+        $3 \times 4 = \answer{12}$
+    \end{problem}
+\end{problem}
+
+
+
+
+
+\end{document}
