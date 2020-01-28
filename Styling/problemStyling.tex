@@ -1,3 +1,4 @@
+\listfiles 
 \documentclass{ximera}
 \usepackage[framemethod=default]{mdframed}% Use mdframed to provide extensive styling for environments in pdf form.
 
@@ -23,8 +24,8 @@
 \definecolor{solutionBackgroundColor}{RGB}{255, 179, 179}% A light olive color for free response environment backgrounds
 \definecolor{solutionBorderColor}{RGB}{77, 77, 77}% Darker Grey color for border of hint environments.
 
-\mdfdefinestyle{problem-env}{% This is the (default) style for problem environments.
-%%%         Line information for borders.
+%\mdfdefinestyle{problem-env}{% This is the (default) style for problem environments.
+%%%%         Line information for borders.
 %        linewidth=          1pt,%
 %        roundcorner=        8pt,%   This rounds the corner a bit to improve aesthetic.
 %%%%         Spacing Information
@@ -42,7 +43,7 @@
 %%%%         Box Breaking Behavior
 %        nobreak=everyline,%                             Allow the box to break if it needs to, but still gives a full frame after breaking.
 %        needspace=30pt,%                                If there isn't at least a 30pt space before the bottom of the
-    }% End problem environment styling.
+%    }% End problem environment styling.
 %
 %\mdfdefinestyle{multipleChoice-env}{% This is the (default) style for multiple choice environments.
 %%%%         Line information for borders.
@@ -204,7 +205,10 @@
     \definecolor{#1BackgroundColor}{RGB}{#2, #3, #4}
     }
 
+
+
 \begin{document}
+
 
 
 This is a file to do problem environment styling.
