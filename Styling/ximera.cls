@@ -67,7 +67,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\begin{verbatim}
 \let\m\message
 \def\w{\m{::}}\def\t{\m{:::}}\def\s{\m{ }}\def\n{\m{^^J}}\def\u{::'}\def\d{'::}\def\v{:::::}
 \n
@@ -146,7 +146,7 @@
 \RequirePackage{titling}
 \RequirePackage{url}
 \RequirePackage[table]{xcolor}
-\RequirePackage[TikZ]{mdframed}% Use mdframed to provide extensive styling for environments in pdf form.
+%\RequirePackage[TikZ]{mdframed}% Use mdframed to provide extensive styling for environments in pdf form.
 \RequirePackage{fancyvrb}
 \RequirePackage{ifpdf}
 \ifpdf
