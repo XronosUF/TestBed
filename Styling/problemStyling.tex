@@ -1,32 +1,23 @@
 \documentclass{ximera}
 %\usepackage[framemethod=default]{mdframed}% Use mdframed to provide extensive styling for environments in pdf form.
 
-\usepackage[most]{tcolorbox}
+%\usepackage[most]{tcolorbox}
 \usepackage{lipsum}
 
 \definecolor{linequote}{RGB}{224,215,188}
 \definecolor{backquote}{RGB}{249,245,233}
 
-\newtcolorbox{myquote}[1][]{%
-    enhanced, breakable, 
-    size=minimal,
-    frame hidden, boxrule=0pt,
-    sharp corners,
-    colback=backquote,
-    #1
-}
+
 
 
 \begin{document}
-\lipsum[2]
 
-\begin{myquote}
-\lipsum[2]
-\end{myquote}
+\begin{problem}
+This is a general problem test to see if $\answer{6}$ takes 6 as the correct answer.
+\end{problem}
 
-\begin{myquote}[colback=red!30, size=small]
-\lipsum[2]
-\end{myquote}
+
+
 
 \end{document}
 %
