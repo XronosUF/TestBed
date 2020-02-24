@@ -1,52 +1,20 @@
 \newenvironment {prompt}{}{}
 \newcommand {\DeclareMathOperator }[2]{\@OldDeclareMathOperator {##1}{##2}\immediate \write \myfile {\unexpanded {\DeclareMathOperator }{\unexpanded {##1}}{\unexpanded {##2}}}}
 \newcommand {\ungraded }[0]{}
-\newcommand {\tcbsubskin }[3]{\tcb@new@skin {##1}{skin@##2,##3}}
-\newcommand {\tcbtitle }[0]{\ifx \tcbtitletext \@empty \else \leavevmode {\color {tcbcoltitle}\kvtcb@fonttitle \kvtcb@haligntitle \kvtcb@before@title \tcbtitletext \kvtcb@after@title }\fi }
-\newcommand {\tcolorboxenvironment }[2]{\BeforeBeginEnvironment {##1}{\begin {tcolorbox}[savedelimiter={##1},##2]}\AfterEndEnvironment {##1}{\end {tcolorbox}}}
-\newcommand {\tcb@remove@bs }[1]{\ifcat \relax \noexpand ##1\expandafter \tcb@remove@bs@aux@i \fi ##1}
-\newcommand {\tcb@remove@bs@aux@i }[0]{\romannumeral \if \string \ \tcb@remove@bs@aux@ii \fi \expandafter \tcb@remove@bs@aux@iii \string }
-\newcommand {\tcb@remove@bs@aux@ii }[0]{}
-\newcommand {\tcb@remove@bs@aux@iii }[1]{\z@ }
-\newcommand {\l@tcolorbox }[0]{\@dottedtocline {1}{1.5em}{2.3em}}
-\newcommand {\tcb@record }[1]{\immediate \write \tcb@record@out {##1}}
-\newcommand {\tcbstoprecording }[0]{\immediate \closeout \tcb@record@out \let \tcbrecord \tcb@null }
-\newcommand {\tcbpkgprefix }[0]{}
-\newcommand {\thetcbrasternum }[0]{\the \numexpr (\c@tcbrasterrow -1)*\kvtcb@raster@columns +\c@tcbrastercolumn \relax }
-\newcommand {\tikzpicture@tcb@hooked }[0]{\edef \tcb@tikzpicture@begin {\noexpand \tikzpicture [\expandonce \tcb@tikz@option@hook ]}\tcb@tikzpicture@begin \tcb@tikz@begin@hook }
-\newcommand {\tcbclipframe }[0]{\begin {scope}\tcb@clip@frame }
-\newcommand {\tcbinvclipframe }[0]{\begin {scope}\tcb@invclip@frame }
-\newcommand {\tcbclipinterior }[0]{\begin {scope}\tcb@clip@interior }
-\newcommand {\tcbcliptitle }[0]{\begin {scope}\tcb@clip@title }
-\newcommand {\tcbhypernode }[2]{\ifdefined \hypersetup \@ifundefined {pgf@sh@ns@##2}{}{\node [inner sep=0pt,outer sep=0pt] at (##2.center){\tcbsetmacrotowidthofnode \tcb@w@hn {##2}\tcbsetmacrotoheightofnode \tcb@h@hn {##2}\hypersetup {pdfborder=0 0 0}##1{\vtop to \dimexpr \tcb@h@hn -2bp\relax {\hbox to \dimexpr \tcb@w@hn -2bp\relax {}\vfil }}};}\fi }
-\newcommand {\tcbmaketheorem }[5]{\newtcolorbox {##1}[3][]{##3,theorem={##2}{##4}{####2}{##5\kvtcb@label@sep ####3},####1}}
-\newcommand {\expl@create@bool@option }[2]{\DeclareOption {##1}{\chardef ##2=1 }\DeclareOption {##1=true}{\chardef ##2=1 }\DeclareOption {##1=false}{\chardef ##2=0 }\newcommand *##2{}\chardef ##2=0 }
-\newcommand {\l@expl@undo@recent@deprecations@bool }[0]{}
-\newcommand {\l@expl@check@declarations@bool }[0]{}
-\newcommand {\l@expl@log@functions@bool }[0]{}
-\newcommand {\l@expl@enable@debug@bool }[0]{}
-\newcommand {\l@expl@options@clist }[0]{}
-\newcommand {\iftcb@process@on }[3]{\tcbproc@readmdfive {##1}{##2}\ifdefstrequal {\tcbproclastmdfivesum }{\tcbprocmdfivesum }{}{\tcbproc@writemdfive {##2}}\expandafter \@firstoftwo }
-\newcommand {\iftcb@process@conditional }[3]{\tcbproc@readmdfive {##1}{##2}\ifdefstrequal {\tcbproclastmdfivesum }{\tcbprocmdfivesum }{\IfFileExists {##3}{\ifnum \pdf@strcmp {\pdf@filemoddate {##2}}{\pdf@filemoddate {##3}}>0\relax \expandafter \@firstoftwo \else \expandafter \@secondoftwo \fi }{\expandafter \@firstoftwo }}{\tcbproc@writemdfive {##2}\expandafter \@firstoftwo }}
-\newcommand {\iftcb@process@off }[3]{\tcbproc@readmdfive {##1}{##2}\ifdefstrequal {\tcbproclastmdfivesum }{\tcbprocmdfivesum }{}{\tcbproc@writemdfive {##2}}\expandafter \@secondoftwo }
-\newcommand {\tcbiffileprocess }[1]{\ifcase \numexpr ##1\relax \expandafter \iftcb@process@on \or \expandafter \iftcb@process@conditional \else \expandafter \iftcb@process@off \fi }
-\newcommand {\tcb@lower@outside }[1]{\tcbset {savedelimiter=tcb@lower@outside}\tcb@minipage {##1}\color {tcbcollower}\kvtcb@fontlower \kvtcb@halignlower \tcb@insert@before@lower }
-\newcommand {\tcb@outside@environment }[0]{\tcb@before@unbroken \begin {minipage}{\tcb@width }}
-\newcommand {\tcblisting }[1]{\stepcounter {tcblisting}\edef \thetcblistingcount {\thetcblisting }\tcb@layer@pushup \tcb@apply@box@options {capture=minipage,##1}\begingroup \tcbverbatimwrite {\kvtcb@listingfile }}
-\newcommand {\tcboutputlisting }[0]{\begingroup \tcbverbatimwrite {\kvtcb@listingfile }}
-\newcommand {\tcbvignette }[1]{\ifdefined \pgfpictureid \begingroup \tcbset {vig/.cd,##1}\tcbdimto \tcb@vig@xA {\tcb@vig@xmin }\tcbdimto \tcb@vig@xB {\tcb@vig@xmax }\tcbdimto \tcb@vig@yA {\tcb@vig@ymin }\tcbdimto \tcb@vig@yB {\tcb@vig@ymax }\tcbdimto \tcb@vig@xa {\tcb@vig@xA +\tcb@vig@size@west }\tcbdimto \tcb@vig@xb {\tcb@vig@xB -(\tcb@vig@size@east )}\tcbdimto \tcb@vig@ya {\tcb@vig@yA +\tcb@vig@size@south }\tcbdimto \tcb@vig@yb {\tcb@vig@yB -(\tcb@vig@size@north )}\begin {scope}[tcb@vig@scope]\tcb@vig@draw \end {scope} \endgroup \else \tcb@warning {'tcbvignette' was found outside a 'tikzpicture' environment and is ignored}\fi }
-\newcommand {\tcb@poster@env }[0]{\let \posterbox \tcb@poster@box \let \posterboxenv \tcb@poster@boxenv \let \endposterboxenv \endtcb@poster@boxenv \ifundef \tcb@poster@height {\ifnum \c@tcblayer =0\relax \def \tcb@poster@height {\textheight }\else \ifdim \dimexpr \tcbtextheight >0pt\relax \def \tcb@poster@height {\tcbtextheight }\else \def \tcb@poster@height {0.75\textheight }\fi \fi }{}\tcbset {poster/.cd,poster@poster}\tcbdimto \tcbposterwidth {\tcb@poster@width }\tcbdimto \tcbposterheight {\tcb@poster@height }\tcbdimto \tcbpostercolspacing {\tcb@poster@colspacing }\tcbdimto \tcbposterrowspacing {\tcb@poster@rowspacing }\edef \tcbpostercolumns {\the \numexpr \tcb@poster@columns \relax }\edef \tcbposterrows {\the \numexpr \tcb@poster@rows \relax }\tcbdimto \tcbpostercolwidth {(\tcbposterwidth +\tcbpostercolspacing )/\tcbpostercolumns -\tcbpostercolspacing }\tcbdimto \tcbposterrowheight {(\tcbposterheight +\tcbposterrowspacing )/\tcbposterrows -\tcbposterrowspacing }\begin {tikzpicture}\path [use as bounding box] (0,0) rectangle (\tcbposterwidth ,\tcbposterheight ); \node [name=\tcb@poster@prefix poster,at={(0,0)},line width=0mm,inner sep=0mm,outer sep=0mm,draw=none,fill=none,rectangle, above right,minimum width=\tcbposterwidth ,minimum height=\tcbposterheight ]{}; \coordinate (\tcb@poster@prefix top) at (0,\tcbposterheight +\tcbposterrowspacing ); \coordinate (\tcb@poster@prefix bottom) at (0,-\tcbposterrowspacing ); \coordinate (\tcb@poster@prefix middle) at (0,\the \dimexpr 0.5\dimexpr \tcbposterheight \relax ); \begin {scope}[every node/.style={inner sep=0pt,outer sep=0,above right,minimum height=\tcbposterheight ,minimum width=\tcbpostercolwidth }]\node (\tcb@poster@prefix col1) at (0,0) {}; \@tempcnta 1\@tempcntb \numexpr \tcbpostercolumns \relax \@tempdima \dimexpr \tcbpostercolwidth +\tcbpostercolspacing \relax \@whilenum \@tempcnta <\@tempcntb \do {\edef \tcb@temp {\tcb@poster@prefix col\@arabic \@tempcnta }\advance \@tempcnta 1\relax \node [xshift=\tcbpostercolspacing ] (\tcb@poster@prefix col\@arabic \@tempcnta ) at (\tcb@temp .south east) {}; }\end {scope}\begin {scope}[every node/.style={inner sep=0pt,outer sep=0,below right,minimum height=\tcbposterrowheight ,minimum width=\tcbposterwidth }]\node (\tcb@poster@prefix row1) at (0,\tcbposterheight ) {}; \@tempcnta 1\@tempcntb \numexpr \tcbposterrows \relax \@tempdima \dimexpr \tcbposterrowheight +\tcbposterrowspacing \relax \@whilenum \@tempcnta <\@tempcntb \do {\edef \tcb@temp {\tcb@poster@prefix row\@arabic \@tempcnta }\advance \@tempcnta 1\relax \node [yshift=-\tcbposterrowspacing ] (\tcb@poster@prefix row\@arabic \@tempcnta ) at (\tcb@temp .south west) {}; }\end {scope}\iftcb@poster@showframe \@tempcnta 0\@tempcntb \numexpr \tcbpostercolumns \relax \@whilenum \@tempcnta <\@tempcntb \do {\advance \@tempcnta 1\relax \edef \tcb@temp {\tcb@poster@prefix col\@arabic \@tempcnta }\draw [red] (\tcb@temp .north west) node[above right]{col\@arabic \@tempcnta } rectangle (\tcb@temp .south east); }\@tempcnta 0\@tempcntb \numexpr \tcbposterrows \relax \@whilenum \@tempcnta <\@tempcntb \do {\advance \@tempcnta 1\relax \edef \tcb@temp {\tcb@poster@prefix row\@arabic \@tempcnta }\draw [red] (\tcb@temp .north west) node[below left]{row\@arabic \@tempcnta } rectangle (\tcb@temp .south east); }\gdef \tcb@poster@framelist {}\fi }
-\newcommand {\tcbposter@coverage }[0]{}
-\newcommand {\tcbposterset }[1]{\tcbset {posterset/.cd,##1}}
+\newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[2]{}
 \newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
 \newcommand {\reserved@a }[1]{}
 \newcommand {\reserved@a }[2]{}
+\newcommand {\mdf@patchamsthm }[0]{\let \mdf@deferred@thm@head \deferred@thm@head \pretocmd {\deferred@thm@head }{\@inlabelfalse }{\mdf@PackageInfo {mdframed detected package amsthm 
+ changed the theorem header of amsthm\MessageBreak }}{\mdf@PackageError {mdframed detected package amsthm 
+ changed the theorem header of amsthm failed\MessageBreak }}}
 \newcommand {\vnameref  }[1]{\unskip ~\nameref {##1}\@vpageref [\unskip ]{##1}}
 \newcommand {\ref  }[0]{\@ifstar \@refstar \T@ref }
 \newcommand {\pageref  }[0]{\@ifstar \@pagerefstar \T@pageref }
 \newcommand {\nameref  }[0]{\@ifstar \@namerefstar \T@nameref }
 \newcommand {\ST@wsf }[1]{\immediate \write \ST@sf {##1}}
+\newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[2]{}
 \newcommand {\reserved@a }[0]{\AtBeginDocument }
 \newcommand {\reserved@a }[1]{}
